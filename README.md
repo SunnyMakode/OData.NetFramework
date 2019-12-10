@@ -9,7 +9,7 @@ This will hold our domain classes.
 This will be our internal communication channel or data service.
 
 #OData.IOC: 
-This will be used it for Dependency Injection.
+This will be used for Dependency Injection.
 
 #OData.ORM: 
 This will be used for Entity Framework related operation.
