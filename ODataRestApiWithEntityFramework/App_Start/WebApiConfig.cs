@@ -1,7 +1,9 @@
-﻿using System.Web.Http;
-using System.Web.OData.Batch;
-using System.Web.OData.Builder;
-using System.Web.OData.Extensions;
+﻿
+
+using System.Web.Http;
+using Microsoft.AspNet.OData.Batch;
+using Microsoft.AspNet.OData.Builder;
+using Microsoft.AspNet.OData.Extensions;
 using Microsoft.OData.Edm;
 using OData.Business.DomainClasses;
 
@@ -20,7 +22,7 @@ namespace ODataRestApiWithEntityFramework
         {
             ODataConventionModelBuilder builder = new ODataConventionModelBuilder
             {
-                Namespace = "ODataRestAPI",
+                Namespace = "ODataRestApiWithEntityFramework.Controllers",
                 ContainerName = "DefaultContainer"
             };
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
-using System.Web.OData;
 using System.Web.Http;
+using Microsoft.AspNet.OData;
 using OData.Business.DomainClasses;
 using OData.InternalDataService.Implementation;
 
