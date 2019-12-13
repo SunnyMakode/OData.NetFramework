@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementation\AuthRepository.cs" />
     <Compile Include="Implementation\Service.cs" />
+    <Compile Include="Interface\IAuthRepository.cs" />
     <Compile Include="Interface\IProjectRepository.cs" />
     <Compile Include="Interface\IProjectDetailRepository.cs" />
     <Compile Include="Implementation\ProjectDetailRepository.cs" />

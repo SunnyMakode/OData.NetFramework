@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace OData.ORM.Abstractions.RepositoryPattern
 {
@@ -19,5 +20,7 @@ namespace OData.ORM.Abstractions.RepositoryPattern
         void AddRange(IEnumerable<TEntity> entities);
         void Update(TEntity entity);
         void Remove(TEntity entity);
+        Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate);
+        Task<bool> ExistAsync(Expression<Func<TEntity, bool>> predicate = null);
     }
 }

@@ -60,6 +60,10 @@
     <Compile Include="Migrations\201912051047547_InitialScaffolding.designer.cs">
       <DependentUpon>201912051047547_InitialScaffolding.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912131704093_UserEntityAdded.cs" />
+    <Compile Include="Migrations\201912131704093_UserEntityAdded.designer.cs">
+      <DependentUpon>201912131704093_UserEntityAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -76,6 +80,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201912051047547_InitialScaffolding.resx">
       <DependentUpon>201912051047547_InitialScaffolding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912131704093_UserEntityAdded.resx">
+      <DependentUpon>201912131704093_UserEntityAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

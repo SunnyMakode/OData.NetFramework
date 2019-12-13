@@ -4,9 +4,11 @@ using System.Web.Http;
 using Microsoft.AspNet.OData;
 using OData.Business.DomainClasses;
 using OData.InternalDataService.Implementation;
+using OData.InternalDataService.Interface;
 
 namespace ODataRestApiWithEntityFramework.Controllers
 {
+    [Authorize]
     public class ProjectController : ODataController
     {
         private readonly IProjectRepository _projectRepository;
@@ -28,6 +30,7 @@ namespace ODataRestApiWithEntityFramework.Controllers
         // GET: localhost/Projects(1)
         [EnableQuery]
         [HttpGet]
+        [AllowAnonymous]
         public IHttpActionResult Get(long key)
         {
             Project temp = null;

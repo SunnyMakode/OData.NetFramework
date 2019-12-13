@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="DomainClasses\Project.cs" />
     <Compile Include="DomainClasses\ProjectDetail.cs" />
+    <Compile Include="DomainClasses\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

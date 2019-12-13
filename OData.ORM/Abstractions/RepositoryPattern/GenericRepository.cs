@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace OData.ORM.Abstractions.RepositoryPattern
 {
@@ -16,14 +17,13 @@ namespace OData.ORM.Abstractions.RepositoryPattern
             Context = context;
         }
 
-        public virtual void Dispose(bool disposing)
+        protected IDbSet<TEntity> DbSet
         {
-            if (!_disposed)
-                if (disposing)
-                    Context.Dispose();
-
-            _disposed = true;
-        }
+            get
+            {
+                return Context.Set<TEntity>();
+            }
+        }        
 
         public TEntity Get<TDataType>(TDataType id) where TDataType : struct
         {
@@ -72,10 +72,30 @@ namespace OData.ORM.Abstractions.RepositoryPattern
             Context.Entry(entity).State = EntityState.Deleted;
         }
 
+        public async Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate)
+        {
+            return await DbSet.FirstOrDefaultAsync<TEntity>(predicate);
+        }
+
+        public async Task<bool> ExistAsync(Expression<Func<TEntity, bool>> predicate = null)
+        {
+            var set = this.Context.Set<TEntity>();
+            return (predicate == null) ? await set.AnyAsync() : await set.AnyAsync(predicate);
+        }
+
         public void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);
+        }
+
+        public virtual void Dispose(bool disposing)
+        {
+            if (!_disposed)
+                if (disposing)
+                    Context.Dispose();
+
+            _disposed = true;
         }
     }
 }

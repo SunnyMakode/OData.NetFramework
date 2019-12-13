@@ -13,6 +13,7 @@ namespace OData.ORM.Context
         public ODataDbContext() : base("ODataDbContext") { }
         public DbSet<Project> Projects { get; set; }
         public DbSet<ProjectDetail> ProjectDetails { get; set; }
+        public DbSet<User> Users { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

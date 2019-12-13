@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using OData.Business.DomainClasses;
+using OData.InternalDataService.Interface;
 using OData.ORM.Abstractions.RepositoryPattern;
 using OData.ORM.Abstractions.UnitOfWorkPattern;
 

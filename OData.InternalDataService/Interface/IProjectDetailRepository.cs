@@ -1,7 +1,7 @@
 ﻿using OData.Business.DomainClasses;
 using System.Collections.Generic;
 
-namespace OData.InternalDataService.Implementation
+namespace OData.InternalDataService.Interface
 {
     public interface IProjectDetailRepository
     {
